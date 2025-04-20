@@ -9,8 +9,9 @@
     "setup:web": "npm run setup --prefix web",
     "setup:api": "npm run setup --prefix api",
     "setup:mobile": "npm install --prefix mobile",
+
     "start": "concurrently \"npm run start:web\" \"npm run start:api\" --kill-others --names \"web,api\"",
-    "start:web": "npm run start --prefix web",
+    "start:web": "cross-env NODE_OPTIONS=--openssl-legacy-provider npm run start --prefix web",
     "start:api": "npm run start --prefix api"
   },
   "repository": {
@@ -25,6 +26,8 @@
   "homepage": "https://github.com/atulmy/crate#readme",
   "dependencies": {},
   "devDependencies": {
-    "concurrently": "^4.1.0"
+    "concurrently": "^4.1.0",
+    "@babel/node": "^7.24.0",
+    "cross-env": "^7.0.3"
   }
 }
