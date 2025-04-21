@@ -11,11 +11,10 @@
     "setup:mobile": "npm install --prefix mobile",
     "start": "concurrently \"npm run start:web\" \"npm run start:api\" --kill-others --names \"web,api\"",
     "start:web": "npm run start --prefix web",
-    "start:api": "npm run start --prefix api"
+    "start:api": "npm run start --prefix api",
     "build": "concurrently \"npm run build:web\" \"npm run build:api\" --names \"web,api\"",
     "build:web": "npm run build --prefix web",
     "build:api": "npm run build --prefix api"
-
   },
   "repository": {
     "type": "git",
