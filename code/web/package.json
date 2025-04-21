@@ -11,8 +11,11 @@
     "start:prod": "npm run build:client:prod && npm run build:server:prod && npm run start:server:prod",
     "build:client:prod": "webpack -p",
     "build:server:prod": "babel src -s -D -d build",
-    "start:server:prod": " node build/index.js",
-    "storybook": "start-storybook -p 9000 -c storybook"
+    "start:server:prod": "node build/index.js",
+    "storybook": "start-storybook -p 9000 -c storybook",
+    "build": "concurrently \"npm run build:web\" \"npm run build:api\" --names \"web,api\"",
+    "build:web": "npm run build --prefix web",
+    "build:api": "npm run build --prefix api"
   },
   "keywords": [],
   "author": "",
